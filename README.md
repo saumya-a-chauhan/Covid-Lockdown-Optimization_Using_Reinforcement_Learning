@@ -4,7 +4,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-RL-EE4C2C.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 📌 Overview & Problem Statement
+##  Overview & Problem Statement
 When a severe viral outbreak occurs, policymakers face a strict **Constrained Optimization Problem**: maximize economic output (which requires human mobility) subject to the strict physical constraint of available hospital beds (to minimize fatalities). 
 
 Historically, human heuristics fall into extremes: "Always Open" (causing healthcare collapse) or "Always Lockdown" (causing economic devastation and artificially prolonging the crisis). Furthermore, standard Reinforcement Learning (RL) approaches often rely on subjective "Reward Shaping" (forcing a human to arbitrarily define the mathematical value of a life vs. GDP) or assume homogeneous mixing via ODEs (ignoring spatial neighborhood clusters).
@@ -13,7 +13,7 @@ This project solves these gaps by deploying a **Continuous Spatial Multi-Agent E
 
 ---
 
-## 🌍 The Environment: Spatial SIRD Physics Engine
+##  The Environment: Spatial SIRD Physics Engine
 A custom 2D Monte Carlo physics simulation was built to realistically model viral spread:
 * **Agents & Space:** 2,500 agents maneuver in a continuous 1.0 x 1.0 bounded 2D grid.
 * **Mobility:** Every day, agents take a random step of size `L`. This `L` is the "Economy."
@@ -22,7 +22,7 @@ A custom 2D Monte Carlo physics simulation was built to realistically model vira
 
 ---
 
-## 🧠 The Agent: Continuous RCPO
+##  The Agent: Continuous RCPO
 The policymaker is an **Advantage Actor-Critic (A2C)** network utilizing an extended version of RCPO.
 
 * **State Space (Continuous 4D Tensor):** 
@@ -41,7 +41,7 @@ Training a CMDP agent in an environment with a 21-day temporal lag causes severe
 
 ---
 
-## 📊 Results & Visualizations
+##  Results & Visualizations
 To ensure statistical significance and avoid "spatial flukes" (e.g., Patient Zero walking into an empty corner), all policies were rigorously evaluated across **5 distinct random environment seeds**. 
 
 ### Master Evaluation Data
@@ -101,7 +101,7 @@ At a highly restrictive capacity of 9 beds, a static "Always Lockdown" artificia
 
 ---
 
-## 🚀 How to Run the Code
+##  How to Run the Code
 
 The repository includes a fully automated pipeline script that handles OS dependencies, virtual environments, execution, training, and media generation.
 
@@ -131,7 +131,7 @@ cd Covid-Lockdown-Optimization_Using_Reinforcement_Learning
 bash run.sh
 ```
 
-## 📂 Repository Structure
+##  Repository Structure
 * `assets/` - Contains media assets, GIFs, and PNG graphs for the README.
 * `train_continuous_sird.py` - The main RCPO algorithm, A2C network definitions, and 3000-episode training loop.
 * `sir_env.py` - The 2D spatial Monte Carlo physics engine.
