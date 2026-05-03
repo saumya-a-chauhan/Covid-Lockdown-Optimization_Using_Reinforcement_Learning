@@ -91,7 +91,7 @@ The repository includes a fully automated pipeline script that handles OS depend
 ### Option 1: Standard Linux / WSL Execution
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/saumya-a-chauhan/Covid-Lockdown-Optimization_Using_Reinforcement_Learning.git](https://github.com/saumya-a-chauhan/Covid-Lockdown-Optimization_Using_Reinforcement_Learning.git)
+   git clone https://github.com/saumya-a-chauhan/Covid-Lockdown-Optimization_Using_Reinforcement_Learning.git
    cd Covid-Lockdown-Optimization_Using_Reinforcement_Learning
    ```
 2. Run the automated bash script:
@@ -107,7 +107,7 @@ docker run -it ubuntu:22.04 /bin/bash
 
 # 2. Inside the container, install git and clone
 apt-get update -y && apt-get install git -y
-git clone [https://github.com/saumya-a-chauhan/Covid-Lockdown-Optimization_Using_Reinforcement_Learning.git](https://github.com/saumya-a-chauhan/Covid-Lockdown-Optimization_Using_Reinforcement_Learning.git)
+git clone https://github.com/saumya-a-chauhan/Covid-Lockdown-Optimization_Using_Reinforcement_Learning.git 
 cd Covid-Lockdown-Optimization_Using_Reinforcement_Learning
 
 # 3. Execute the pipeline
