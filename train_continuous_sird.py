@@ -190,7 +190,7 @@ def train_separated_capacities():
                 ep_cost += info['is_breached'] # Log actual days breached
                 state = next_state
 
-            if episode % 10 == 0:
+            if episode % 1 == 0:
                 print(f"Cap: {cap:3d} | Ep: {episode:4d} | Econ: {ep_reward:5.1f} | Breaches: {ep_cost:3.0f} | Deaths: {info['deaths']:3d} | Lambda: {agent.lambda_penalty:.3f}")
                 
             training_history.append({
