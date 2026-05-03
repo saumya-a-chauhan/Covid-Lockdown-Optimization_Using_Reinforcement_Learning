@@ -6,6 +6,7 @@ __pycache__/
 # Output directories and generated files
 project_outputs/
 *.pth
+!models/*.pth
 *.csv
 
 # OS generated files
