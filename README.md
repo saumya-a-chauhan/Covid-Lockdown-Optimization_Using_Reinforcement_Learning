@@ -1,4 +1,4 @@
-# Optimizing the Unthinkable: A Constrained RL Approach to Pandemic Mitigation
+# Optimizing Lockdown policies using reinforcement learning
 
 [![Python 3.10](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-RL-EE4C2C.svg)](https://pytorch.org/)
