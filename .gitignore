@@ -3,5 +3,10 @@ venv/
 env/
 __pycache__/
 
+# Output directories and generated files
+project_outputs/
+*.pth
+*.csv
+
 # OS generated files
 .DS_Store

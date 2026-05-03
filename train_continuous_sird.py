@@ -6,7 +6,7 @@ import os
 import pandas as pd
 from scipy.spatial.distance import cdist
 
-NUM_EPISODES = 3000
+NUM_EPISODES = 5000
 DAYS = 200
 NUM_AGENTS = 2500
 OUTPUT_DIR = "project_outputs"
