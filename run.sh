@@ -24,7 +24,7 @@ echo "=================================================="
 echo "3. Installing Python Dependencies"
 echo "=================================================="
 pip install --upgrade pip
-pip install -r requirements.txt
+pip install --no-cache-dir -r requirements.txt
 
 echo "=================================================="
 echo "4. Executing Pipeline: Phase 1 (Training)"

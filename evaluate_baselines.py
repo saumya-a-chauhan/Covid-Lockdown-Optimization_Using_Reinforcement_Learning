@@ -57,6 +57,8 @@ def evaluate_all():
         env = CovidEnvSIRD_Continuous(capacity_limit=cap)
         agent = ContinuousRCPOAgent(state_dim=4)
         model_path = os.path.join("models", f"rcpo_continuous_actor_cap_{cap}.pth")
+        # model_path = os.path.join(OUTPUT_DIR, f"rcpo_continuous_actor_cap_{cap}.pth")
+
         
         if os.path.exists(model_path):
             agent.actor.load_state_dict(torch.load(model_path))
