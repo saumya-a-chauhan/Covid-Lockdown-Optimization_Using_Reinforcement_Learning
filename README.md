@@ -133,7 +133,7 @@ bash run.sh
 
 ##  Repository Structure
 * `assets/` - Contains media assets, GIFs, and PNG graphs for the README.
-* `train_continuous_sird.py` - The main RCPO algorithm, A2C network definitions, and 3000-episode training loop.
+* `train_continuous_sird.py` - The main RCPO algorithm, A2C network definitions, and 5000-episode training loop.
 * `sir_env.py` - The 2D spatial Monte Carlo physics engine.
 * `evaluate_baselines.py` - Multi-seed evaluation script comparing the AI against human heuristics.
 * `run.sh` - The master execution pipeline.
