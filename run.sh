@@ -3,13 +3,28 @@
 # Exit immediately if any command fails
 set -e 
 
+# Prevents apt-get from freezing the script to ask for timezone/keyboard input
+export DEBIAN_FRONTEND=noninteractive
+
 echo "=================================================="
 echo "1. System Setup & OS Dependencies"
 echo "=================================================="
-# In a raw ubuntu:22.04 docker, we need to ensure python3, pip, and venv exist.
-# We use '|| sudo ...' just in case the evaluator runs it locally instead of in Docker.
-apt-get update -y || sudo apt-get update -y
-apt-get install -y python3 python3-pip python3-venv || sudo apt-get install -y python3 python3-pip python3-venv
+
+# Safety check: Use sudo only if it is installed (local machine). 
+# If it's missing (Docker), run commands directly.
+if command -v sudo >/dev/null 2>&1; then
+    SUDO="sudo"
+else
+    SUDO=""
+fi
+
+echo "Updating system..."
+$SUDO apt-get update -y -o Acquire::Retries=3 -o Acquire::ForceIPv4=true
+$SUDO apt-get install -y --no-install-recommends \
+    python3 \
+    python3-pip \
+    python3-venv \
+    build-essential
 
 echo "=================================================="
 echo "2. Creating and Activating Virtual Environment"
