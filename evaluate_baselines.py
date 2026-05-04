@@ -37,7 +37,7 @@ def run_evaluation_simulation(policy_name, env, agent=None):
         elif policy_name == "Always_Partial":
             step_size = 0.028
         elif policy_name == "Manual_Reactive":
-            step_size = L_MIN if env.current_inf > (env.capacity_limit * 0.8) else L_MAX
+            step_size = L_MIN if env.current_inf > (env.capacity_limit * 0.6) else L_MAX
             
         next_state, reward, cost, done, info = env.step(step_size)
         
