@@ -89,14 +89,30 @@ def evaluate_all():
             avg_breach = int(total_breaches / NUM_EVAL_SEEDS)
             avg_d = int(total_deaths / NUM_EVAL_SEEDS)
             
-            print(f"[{p:18s}] Avg Mobility: {avg_mob:5.2f} | Avg Breaches: {avg_breach:3d} | Avg Deaths: {avg_d:3d}")
+            # --- PARETO EFFICIENCY SCORE (PES) CALCULATION ---
+            # 1. Economy Index (0 to 1) based on max possible mobility of 8.0
+            economy_index = avg_mob / 8.0 
+            
+            # 2. Survival Index (0 to 1) assuming a realistic worst-case death toll of 100
+            survival_index = max(0, 1.0 - (avg_d / 100.0))
+            
+            # 3. Harmonic Mean (Penalizes extreme imbalance)
+            if economy_index + survival_index > 0:
+                pareto_score = 2 * (economy_index * survival_index) / (economy_index + survival_index)
+            else:
+                pareto_score = 0
+                
+            pareto_score = round(pareto_score * 100, 1) # Convert to percentage 0-100
+            
+            print(f"[{p:18s}] Avg Mobility: {avg_mob:5.2f} | Avg Deaths: {avg_d:3d} | Pareto Score: {pareto_score:4.1f}%")
             
             all_results.append({
                 "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "Capacity": cap, "Policy": p,
-                "Total_Mobility": avg_mob, "Days_Breached": avg_breach, "Total_Deaths": avg_d
+                "Total_Mobility": avg_mob, "Days_Breached": avg_breach, "Total_Deaths": avg_d,
+                "Pareto_Score": pareto_score
             })
-            
+
         # GRAPH GENERATION
         plt.figure(figsize=(12, 6))
         plt.title(f"Avg Infection Curves vs Hospital Capacity ({cap} Beds) - Over {NUM_EVAL_SEEDS} Seeds")
