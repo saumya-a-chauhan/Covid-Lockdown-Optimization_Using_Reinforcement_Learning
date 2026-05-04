@@ -104,7 +104,7 @@ def evaluate_all():
                 
             pareto_score = round(pareto_score * 100, 1) # Convert to percentage 0-100
             
-            print(f"[{p:18s}] Avg Mobility: {avg_mob:5.2f} | Avg Deaths: {avg_d:3d} | Pareto Score: {pareto_score:4.1f}%")
+            print(f"[{p:18s}] Avg Mobility: {avg_mob:5.2f} | Avg Breaches: {avg_breach:3d} | Avg Deaths: {avg_d:3d} | Pareto Score: {pareto_score:4.1f}%")
             
             all_results.append({
                 "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),

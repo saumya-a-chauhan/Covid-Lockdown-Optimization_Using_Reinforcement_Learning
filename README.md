@@ -59,25 +59,25 @@ The AI scales its behavior perfectly based on healthcare capacity. For tight cap
 | | Always Open | 8.00 | 24 | 42 | 73.4% |
 | | Always Lockdown | 3.20 | 0 | 11 | 55.2% |
 | | Always Partial | 5.60 | 18 | 42 | 63.4% |
-| | Manual Reactive | 7.16 | 16 | 21 | 83.9% |
+| | Manual Reactive | 7.16 | 9 | 21 | 83.9% |
 | **100 Beds** | **RCPO AI** | **5.97** | **86** | **42** | **65.3%** |
 | | India Historical | 5.43 | 85 | 48 | 58.9% |
 | | Always Open | 8.00 | 59 | 54 | 63.0% |
 | | Always Lockdown | 3.20 | 87 | 29 | 51.2% |
 | | Always Partial | 5.60 | 117 | 79 | 32.3% |
-| | Manual Reactive | 5.75 | 84 | 39 | 66.0% |
+| | Manual Reactive | 5.75 | 88 | 39 | 66.0% |
 | **50 Beds** | **RCPO AI** | **5.49** | **95** | **32** | **68.3%** |
 | | India Historical | 5.43 | 96 | 49 | 58.2% |
 | | Always Open | 8.00 | 72 | 55 | 62.1% |
 | | Always Lockdown | 3.20 | 106 | 31 | 50.6% |
 | | Always Partial | 5.60 | 133 | 81 | 29.9% |
-| | Manual Reactive | 5.6 | 96 | 37 | 66.3% |
+| | Manual Reactive | 5.6 | 97 | 37 | 66.3% |
 | **9 Beds** | **RCPO AI** | **5.38** | **107** | **21** | **72.7%** |
 | *(Extreme)* | India Historical | 5.43 | 107 | 49 | 58.2% |
 | | Always Open | 8.00 | 97 | 56 | 61.1% |
 | | Always Lockdown | 3.20 | 136 | 31 | 50.6% |
 | | Always Partial | 5.60 | 164 | 81 | 29.9% |
-| | Manual Reactive | 5.34 | 107 | 25 | 70.6% |
+| | Manual Reactive | 5.34 | 105 | 25 | 70.6% |
 
 ### Key Inferences
 *   **Adaptive Intelligence:** The RCPO AI dynamically adjusts its stringency based on capacity. At 500 beds, it perfectly mimics the "Always Open" policy, recognizing the healthcare system is large enough to absorb the infections without penalty. As capacity tightens (100 down to 9), it actively throttles mobility to protect the healthcare constraint.
